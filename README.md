@@ -1,0 +1,4 @@
+- 👋 Hi, I’m @jessicayates7890
+- 👀 I’m interested in Web Development, Game Design and generally improving my skills.
+- 🌱 I’m currently learning Java, PHP, and Web Development languages.
+- 💞️ I’m looking to collaborate on anything, I would love advise, help, and suggestions on my own work and I am happy to lend a helping hand to anyone who needs it.
