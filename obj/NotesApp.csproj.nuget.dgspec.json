@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/jessica/Documents/Training - OTJ/Notes App Jul- 2021/NotesApp/NotesApp.csproj": {}
+    "/home/jessica/Desktop/openarena-0.8.8/NotesApp/NotesApp.csproj": {}
   },
   "projects": {
-    "/home/jessica/Documents/Training - OTJ/Notes App Jul- 2021/NotesApp/NotesApp.csproj": {
+    "/home/jessica/Desktop/openarena-0.8.8/NotesApp/NotesApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jessica/Documents/Training - OTJ/Notes App Jul- 2021/NotesApp/NotesApp.csproj",
+        "projectUniqueName": "/home/jessica/Desktop/openarena-0.8.8/NotesApp/NotesApp.csproj",
         "projectName": "NotesApp",
-        "projectPath": "/home/jessica/Documents/Training - OTJ/Notes App Jul- 2021/NotesApp/NotesApp.csproj",
+        "projectPath": "/home/jessica/Desktop/openarena-0.8.8/NotesApp/NotesApp.csproj",
         "packagesPath": "/home/jessica/.nuget/packages/",
-        "outputPath": "/home/jessica/Documents/Training - OTJ/Notes App Jul- 2021/NotesApp/obj/",
+        "outputPath": "/home/jessica/Desktop/openarena-0.8.8/NotesApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jessica/.nuget/NuGet/NuGet.Config"
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }
