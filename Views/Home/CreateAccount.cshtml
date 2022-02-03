@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create Account";
+}
+
+<div>
+    <h1 class="display-4 text-center">Create Account</h1>
+    <div class="center-form">
+        <form action="/Home/Login">
+            <div class="form-container">
+                <div class="form-section">
+                    <label for="fname">Forname</label>
+                    <input type="text" id="fname" name="fname" value="">
+                    <label for="sname">Surname</label>
+                    <input type="text" id="sname" name="sname" value="">
+                    <label for="dob">D.O.B</label>
+                    <input type="date" id="dob" name="dob" value="">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="">
+                </div>
+                <div class="form-section">
+                    <label for="uname">Username</label>
+                    <input type="text" id="uname" name="uname" value="">
+                    <label for="pword">Password</label>
+                    <input type="text" id="pword" name="pword" value="">
+                    <label for="confpw">Confirm Password</label>
+                    <input type="text" id="confpw" name="confpw" value="">
+                </div>
+            </div>
+            <label class="terms-conditions"><input type="checkbox" value="" class="">I agree to the terms and conditions.</label>
+            <div class="text-center">
+                <input type="submit" value="Submit" class="form-buttons">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 using System;
 
-namespace NotesApplication.Models
+namespace NotesApp.Models
 {
     public class ErrorViewModel
     {

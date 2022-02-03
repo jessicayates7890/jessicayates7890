@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Login Page";
+}
+<script>
+  function Validate() {
+    $.ajax(
+    {
+      type: "POST",
+      url: '@Url.Action("Validate", "Home")',
+      data: {
+        email: $('#uname').val(),
+        password: $('#pword').val()
+      },
+      error: function (result) {
+        alert("There is a Problem, Try Again!");
+      },
+      success: function (result) {
+        console.log(result);
+        if (result.status == true) {
+          window.location.href = '@Url.Action("Index", "Notes")';
+        }
+        else {
+          alert(result.message);
+        }
+      }
+    });
+  }
+</script>
+
+<div class="center-form">
+    <h1 class="display-4 text-center">Account Login</h1><br>
+    <form class="login-form text-center">
+        <div class="login-form-section" data-validate="Username Required">
+            <label for="uname" class="formlabel">Username</label>
+            <input type="text" id="uname" name="uname" value="">
+        </div>
+        <div class="login-form-section" data-validate="Password Required">
+            <label for="pword" class="formlabel">Password</label>
+            <input type="password" id="pword" name="pword" value="">
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Login" class="form-buttons" onclick="Validate()"><br>
+            <a asp-area="" asp-controller="Home" asp-action="CreateAccount">Don't have an account? Create one here.</a>
+        </div>
+    </form>
+</div>

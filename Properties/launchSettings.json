@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:58884",
-      "sslPort": 44332
+      "applicationUrl": "http://localhost:62785",
+      "sslPort": 44388
     }
   },
   "profiles": {
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "NotesApplication": {
+    "NotesApp": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
