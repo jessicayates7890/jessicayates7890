@@ -39,7 +39,7 @@ namespace NotesApp.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public ActionResult Validate()
+        public ActionResult ValidateLogin()
         {
             NotesAppContext context = HttpContext.RequestServices.GetService(typeof(NotesApp.Models.NotesAppContext)) as NotesAppContext;
 
@@ -62,6 +62,11 @@ namespace NotesApp.Controllers
                 }
             }
             return Json(new { status = false, message = "Invalid User!" });
+        }
+
+        public ActionResult ValidateNewUser()
+        {
+            
         }
     }
 }

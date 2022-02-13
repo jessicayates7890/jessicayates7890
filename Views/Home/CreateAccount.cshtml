@@ -2,6 +2,34 @@
     Layout = "_Layout";
     ViewData["Title"] = "Create Account";
 }
+<script>
+  function Validate() {
+    $.ajax(
+    {
+      type: "POST",
+      url: '@Url.Action("ValidateNewUser", "Home")',
+      data: {
+        name: $('#fname').val() + $('#sname').val(),
+        dob: $('#dob').val(),
+        email: $('#email').val(),
+        username: $('#uname').val(),
+        password: $('#pword').val()
+      },
+      error: function (result) {
+        alert("There is a Problem, Try Again!");
+      },
+      success: function (result) {
+        console.log(result);
+        if (result.status == true) {
+          window.location.href = '@Url.Action("Login", "Home")';
+        }
+        else {
+          alert(result.message);
+        }
+      }
+    });
+  }
+</script>
 
 <div>
     <h1 class="display-4 text-center">Create Account</h1>
