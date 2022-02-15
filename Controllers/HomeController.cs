@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using NotesApp.Models;
 using System.Diagnostics;
 using System.Linq;
+using System;
 
 namespace NotesApp.Controllers
 {
@@ -66,7 +67,37 @@ namespace NotesApp.Controllers
 
         public ActionResult ValidateNewUser()
         {
-            
+            NotesAppContext context = HttpContext.RequestServices.GetService(typeof(NotesApp.Models.NotesAppContext)) as NotesAppContext;
+
+            var users = context.GetAllUsers();
+            String name = HttpContext.Request.Form.ElementAt(0).Value.ToString();
+            DateTime dob = DateTime.Parse(HttpContext.Request.Form.ElementAt(1).Value.ToString());
+            String email = HttpContext.Request.Form.ElementAt(2).Value.ToString();
+            String username = HttpContext.Request.Form.ElementAt(3).Value.ToString();
+            String password = HttpContext.Request.Form.ElementAt(4).Value.ToString();
+            String confirmpw = HttpContext.Request.Form.ElementAt(5).Value.ToString();
+
+            foreach (var user in users)
+            {
+                if (password != confirmpw)
+                {
+                    return Json(new { status = false, message = "The passwords entered do not match!" });
+                }
+                if (user.username == username)
+                {
+                    if (user.password == password)
+                    {
+                        return Json(new { status = false, message = "Account already exists!" });
+                    }
+                    else
+                    {
+                        return Json(new { status = false, message = "Username is not unique!" });
+                    }
+                }
+            }
+            context.saveNewUser(name, dob, email, username, password);
+            Console.WriteLine("success!");
+            return Json(new { status = true, message = "Account creation successful!" });
         }
     }
 }
