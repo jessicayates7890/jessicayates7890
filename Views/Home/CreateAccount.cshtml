@@ -3,17 +3,18 @@
     ViewData["Title"] = "Create Account";
 }
 <script>
-  function Validate() {
+  function Validate() { 
     $.ajax(
     {
       type: "POST",
       url: '@Url.Action("ValidateNewUser", "Home")',
       data: {
-        name: $('#fname').val() + $('#sname').val(),
+        name: $('#fname').val() + ' ' + $('#sname').val(),
         dob: $('#dob').val(),
         email: $('#email').val(),
         username: $('#uname').val(),
-        password: $('#pword').val()
+        password: $('#pword').val(),
+        confirmpw: $('#confpw').val()
       },
       error: function (result) {
         alert("There is a Problem, Try Again!");

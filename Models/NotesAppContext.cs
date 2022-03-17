@@ -49,7 +49,10 @@ namespace NotesApp.Models
         public void saveNewUser(String name, DateTime dob, String email, String username, String password) {
             using (MySqlConnection conn = GetConnection()) {
                 conn.Open();
-                new MySqlCommand("insert into users (full_name, dob, email, username, password) values (" + name + ", " + dob + ", " + email + ", " + username + ", " + password + ")", conn);
+                Console.Write(dob);
+                MySqlCommand input = new MySqlCommand("insert into users (full_name, dob, email, username, password) values ('" + name + "', '" + dob + "', '" + email + "', '" + username + "', '" + password + "')", conn);
+                input.ExecuteNonQuery();
+                conn.Close();
             }
         }
     }

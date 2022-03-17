@@ -68,14 +68,15 @@ namespace NotesApp.Controllers
         public ActionResult ValidateNewUser()
         {
             NotesAppContext context = HttpContext.RequestServices.GetService(typeof(NotesApp.Models.NotesAppContext)) as NotesAppContext;
-
+            
             var users = context.GetAllUsers();
-            String name = HttpContext.Request.Form.ElementAt(0).Value.ToString();
-            DateTime dob = DateTime.Parse(HttpContext.Request.Form.ElementAt(1).Value.ToString());
-            String email = HttpContext.Request.Form.ElementAt(2).Value.ToString();
-            String username = HttpContext.Request.Form.ElementAt(3).Value.ToString();
-            String password = HttpContext.Request.Form.ElementAt(4).Value.ToString();
-            String confirmpw = HttpContext.Request.Form.ElementAt(5).Value.ToString();
+            var name = HttpContext.Request.Form.ElementAt(0).Value.ToString();
+            DateTime dob = DateTime.ParseExact(HttpContext.Request.Form.ElementAt(1).Value.ToString(), "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            Console.Write(dob);
+            var email = HttpContext.Request.Form.ElementAt(2).Value.ToString();
+            var username = HttpContext.Request.Form.ElementAt(3).Value.ToString();
+            var password = HttpContext.Request.Form.ElementAt(4).Value.ToString();
+            var confirmpw = HttpContext.Request.Form.ElementAt(5).Value.ToString();
 
             foreach (var user in users)
             {
@@ -89,10 +90,10 @@ namespace NotesApp.Controllers
                     {
                         return Json(new { status = false, message = "Account already exists!" });
                     }
-                    else
-                    {
-                        return Json(new { status = false, message = "Username is not unique!" });
-                    }
+                }
+                else
+                {
+                    return Json(new { status = false, message = "Username is not unique!" });
                 }
             }
             context.saveNewUser(name, dob, email, username, password);
